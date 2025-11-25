@@ -24,7 +24,9 @@ public:
     MyVector(): data(nullptr), length(0), cap(0) {}
     ~MyVector() { delete[] data; }
 
-    void push_back(const T& val);   // Vector 마지막에 항목을 추가하는 함수 구현, 필요시 벡터 크기 증가
+    void _expand();
+
+    void push_back(const T &val);   // Vector 마지막에 항목을 추가하는 함수 구현, 필요시 벡터 크기 증가
     void pop_back();                // Vector의 마지막 항목을 제거하는 함수 구현
     size_t size() const;            // Vecotr에 있는 항목 개수(length)를 리턴하는 함수 구현
     T& operator[](int i) ;          // [] 연산자 구현
